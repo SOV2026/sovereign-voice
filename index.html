@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sovereign Voice</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #0a1a3c;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header img {
+      height: 80px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #142850;
+      flex-wrap: wrap;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      padding: 15px 25px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+      flex: 1;
+    }
+
+    nav button:hover {
+      background-color: #1e3a70;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    h2 {
+      color: #0a1a3c;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background-color: #0a1a3c;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    .blog-post {
+      border-bottom: 1px solid #ccc;
+      padding: 15px 0;
+    }
+
+    .blog-post h3 {
+      margin-bottom: 5px;
+      color: #142850;
+    }
+
+    .blog-post p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 600px;
+    }
+
+    form input, form textarea, form select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      background-color: #142850;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #1e3a70;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header img { height: 60px; }
+      nav button { font-size: 14px; padding: 10px; }
+      .tab-content { padding: 20px; }
+      h2 { font-size: 20px; }
+    }
+
+    @media (max-width: 480px) {
+      nav { flex-direction: column; }
+      nav button { flex: none; width: 100%; text-align: center; }
+      header h1 { font-size: 22px; }
+      header p { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="sovereign-voice-logo.png" alt="Sovereign Voice Logo">
+    <h1>Sovereign Voice</h1>
+    <p>Amplifying Justice, Empowering Voices</p>
+  </header>
+
+  <nav>
+    <button onclick="openTab('home')">Home</button>
+    <button onclick="openTab('about')">About Us</button>
+    <button onclick="openTab('blog')">Blog</button>
+    <button onclick="openTab('join')">Join Us</button>
+    <button onclick="openTab('contact')">Contact Us</button>
+  </nav>
+
+  <!-- Home -->
+  <div id="home" class="tab-content active">
+    <h2>Welcome to Sovereign Voice</h2>
+    <p>Welcome to Sovereign Voice — a platform dedicated to amplifying justice and empowering voices. We publish insightful articles on law, rights, and advocacy, aiming to make complex issues accessible to everyone. Explore our work, learn about our mission, and join us in shaping conversations that matter.</p>
+  </div>
+
+  <!-- About Us -->
+  <div id="about" class="tab-content">
+    <h2>About Us</h2>
+    <p>Sovereign Voice is a collective of writers, advocates, and thinkers committed to promoting legal literacy and justice. Founded with the belief that knowledge is power, we provide a space where ideas on sovereignty, rights, and law can be shared with clarity and purpose. Our mission is to inspire informed dialogue, encourage critical thought, and empower communities through accessible legal writing.</p>
+  </div>
+
+  <!-- Blog -->
+  <div id="blog" class="tab-content">
+    <h2>Our Blog</h2>
+    <p>Our blog is the heart of Sovereign Voice. Here, we publish articles that explore law, justice, and society from multiple perspectives. Whether analyzing international obligations, examining human rights, or discussing reforms, our writers aim to spark meaningful conversations and provide readers with clear, thoughtful insights.</p>
+    <div class="blog-post">
+      <h3>Women’s Access to Education as an International Obligation</h3>
+      <p>Education is a right recognized by international law, yet millions of women remain excluded...</p>
+      <a href="Women’s Access to Education.pdf" target="_blank">Read Full Article (PDF)</a>
+    </div>
+  </div>
+
+  <!-- Join Us -->
+  <div id="join" class="tab-content">
+    <h2>Join Us</h2>
+    <p>Apply to become part of Sovereign Voice. Whether you want to contribute articles, volunteer, or support our mission, we welcome your involvement.</p>
+    <form action="https://formspree.io/f/xpqjjzbn" method="POST">
+  <input type="text" name="first_name" placeholder="First Name" required>
+  <input type="text" name="last_name" placeholder="Last Name" required>
+  <input type="text" name="country" placeholder="Country of Residence" required>
+  <input type="text" name="nationality" placeholder="Nationality" required>
+  <input type="number" name="age" placeholder="Age" required>
+  <input type="text" name="career_goal" placeholder="Future Career Goal" required>
+  <textarea name="experience" rows="3" placeholder="Experience in projects like this" required></textarea>
+  <textarea name="motivation" rows="3" placeholder="Why do you want to join Sovereign Voice?" required></textarea>
+  <textarea name="extra_info" rows="3" placeholder="Any additional information you'd like to share"></textarea>
+  <button type="submit">Apply Now</button>
+  </form>
+  </div>
+
+  <!-- Contact Us -->
+  <div id="contact" class="tab-content">
+    <h2>Contact Us</h2>
+    <p>We’d love to hear from you! Reach out to us through the form below or connect with us on social media.</p>
+    <!-- Example using Formspree to send submissions to Gmail -->
+    <form action="https://formspree.io/f/mzdaabyj" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <h3>Connect with us:</h3>
+    <p>📧 Email: <a href="mailto:sovereignvoice4@gmail.com">sovereignvoice4@gmail.com</a></p>
+    <p>🎵 TikTok: <a href="https://www.tiktok.com/@sovereign.voice5" target="_blank">@sovereign.voice5</a></p>
+    <p>📸 Instagram: <a href="https://www.instagram.com/sovereignvoicee" target="_blank">@sovereignvoicee</a></p>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Sovereign Voice. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function openTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
