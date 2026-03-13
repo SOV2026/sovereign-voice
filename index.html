@@ -195,25 +195,71 @@
     </div>
   </div>
 
-  <!-- Join Us -->
-  <div id="join" class="tab-content">
-    <h2>Join Us</h2>
-    <p>Apply to become part of Sovereign Voice. Whether you want to contribute articles, volunteer, or support our mission, we welcome your involvement.</p>
-    <form action="https://formspree.io/f/xpqjjzbn" method="POST">
-  <input type="text" name="first_name" placeholder="First Name" required>
-  <input type="text" name="last_name" placeholder="Last Name" required>
-  <input type="email" id="email" name="email" placeholder="Email" required>
-  <input type="text" name="country" placeholder="Country of Residence" required>
-  <input type="text" name="nationality" placeholder="Nationality" required>
-  <input type="number" name="age" placeholder="Age" required>
-  <input type="text" name="career_goal" placeholder="Future Career Goal" required>
-  <textarea name="experience" rows="3" placeholder="Experience in projects like this" required></textarea>
-  <textarea name="motivation" rows="3" placeholder="Why do you want to join Sovereign Voice?" required></textarea>
-  <textarea name="extra_info" rows="3" placeholder="Any additional information you'd like to share"></textarea>
-  <button type="submit">Apply Now</button>
-  </form>
-  </div>
+<!-- Join Us -->
+<div id="join" class="tab-content">
+  <h2>Join Us</h2>
+  <p>Apply to become part of Sovereign Voice. Whether you want to contribute articles, volunteer, or support our mission, we welcome your involvement.</p>
+  
+  <form action="https://formspree.io/f/xpqjjzbn" method="POST">
+    <input type="text" name="first_name" placeholder="First Name" required>
+    <input type="text" name="last_name" placeholder="Last Name" required>
+    <input type="email" id="email" name="email" placeholder="Email" required>
+    <input type="text" name="country" placeholder="Country of Residence" required>
+    <input type="text" name="nationality" placeholder="Nationality" required>
+    <input type="number" name="age" placeholder="Age" required>
 
+    <!-- Preferred Communication Platform field -->
+    <select name="platform" required onchange="toggleOtherPlatform()">
+      <option value="" disabled selected>Preferred Communication Platform</option>
+      <option value="TikTok">TikTok</option>
+      <option value="Instagram">Instagram</option>
+      <option value="WhatsApp">WhatsApp</option>
+      <option value="Telegram">Telegram</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <div id="otherPlatformContainer" style="display:none; margin-top:8px;">
+      <input type="text" name="otherPlatform" placeholder="Your preferred communication platform">
+    </div>
+
+    <input type="text" name="career_goal" placeholder="Future Career Goal" required>
+    <textarea name="experience" rows="3" placeholder="Experience in projects like this" required></textarea>
+    <textarea name="motivation" rows="3" placeholder="Why do you want to join Sovereign Voice?" required></textarea>
+    <textarea name="extra_info" rows="3" placeholder="Any additional information you'd like to share"></textarea>
+    <button type="submit">Apply Now</button>
+  </form>
+</div>
+
+<style>
+  /* Unified styling for all form fields */
+  input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    font-family: "Times New Roman", serif; /* serif font */
+    font-size: 14px;
+    color: #555; /* faint black/gray */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+</style>
+
+<script>
+  function toggleOtherPlatform() {
+    const platformSelect = document.getElementsByName("platform")[0];
+    const otherContainer = document.getElementById("otherPlatformContainer");
+    if (platformSelect.value === "Other") {
+      otherContainer.style.display = "block";
+    } else {
+      otherContainer.style.display = "none";
+    }
+  }
+</script>
   <!-- Contact Us -->
   <div id="contact" class="tab-content">
     <h2>Contact Us</h2>
